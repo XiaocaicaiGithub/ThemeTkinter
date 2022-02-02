@@ -4,7 +4,7 @@ with open('README.md', mode='r', encoding='UTF-8') as DescriptionFile:
     LongDescription = DescriptionFile.read()
 
 setuptools.setup(
-    version='0.0.2',
+    version='0.0.3',
     author='Xiaocaicai',
     name='ThemeTkinter',
     author_email='xiaocaicai_email@sina.com',

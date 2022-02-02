@@ -1,9 +1,8 @@
 from inspect import getfile
-from os.path import join
+from os.path import join, exists
 from tkinter import Tk
 from tkinter import ttk as Widgets
 
-Widgets
 
 ThemeGroupAzure = 'Azure'
 ThemeGroupForest = 'Forest'
@@ -72,11 +71,14 @@ class Window(Tk):
             self.tk.call('set_sun_valley_theme', Type)
 
     def LoadThemes(self):
-        CurrentPath = getfile(Window)
-        CurrentPath = '\\'.join(CurrentPath.split('\\')[0:-1])
-        AzureThemePath = join(CurrentPath, 'AzureTheme', 'Azure.tcl')
-        ForestThemePath = join(CurrentPath, 'ForestTheme', 'Forest.tcl')
-        SunValleyThemePath = join(CurrentPath, 'SunValleyTheme', 'SunValley.tcl')
+        ThemesPath = getfile(Window)
+        ThemesPath = join('\\'.join(ThemesPath.split('\\')[0:-1]), 'Themes')
+        if not exists(ThemesPath):
+            from ThemeTkinter.InstallDepend import InstallDepend
+            InstallDepend()
+        AzureThemePath = join(ThemesPath, 'AzureTheme', 'Azure.tcl')
+        ForestThemePath = join(ThemesPath, 'ForestTheme', 'Forest.tcl')
+        SunValleyThemePath = join(ThemesPath, 'SunValleyTheme', 'SunValley.tcl')
         self.tk.call('source', AzureThemePath)
         self.tk.call('source', ForestThemePath)
         self.tk.call('source', SunValleyThemePath)

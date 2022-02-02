@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-__Version__ = '0.0.2'
+__Version__ = '0.0.3'
 __Title__ = 'ThemeTkinter'
 __Author__ = 'Xiaocaicai'
 __Author_Email__ = 'xiaocaicai_email@sina.com'

@@ -1,7 +1,6 @@
 from tkinter import Tk
 from tkinter import ttk as Widgets
 
-
 class Window(Tk):
     def __init__(self, Caption: str = None, Size: tuple[int, int] | list[int, int] = None,
                  Position: tuple[int, int] | list[int, int] = None, MinSize: tuple[int, int] | list[int, int] = None,
